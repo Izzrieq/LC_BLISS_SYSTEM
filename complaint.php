@@ -126,7 +126,7 @@ $result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY name DESC")
                 ?>
     </table> 
     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 border border-blue-700 rounded">
-        <a href="addcomplaint.php">ADD ISSUE</a>
+        <a href="issue.php">ADD ISSUE</a>
     </button>        
     <nav class="flex items-center justify-between pt-4" aria-label="Table navigation">
         <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Showing <span class="font-semibold text-gray-900 dark:text-white">1-10</span> of <span class="font-semibold text-gray-900 dark:text-white">1000</span></span>
