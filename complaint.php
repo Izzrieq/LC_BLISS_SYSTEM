@@ -16,7 +16,15 @@ $result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY name DESC")
 
 </head>
 <body>
-<nav class="bg-gray-50 dark:bg-gray-700">
+<header>
+        <div class="left-nav">
+            <img src="assets/LC_COMPANY LOGO_MARCH 2023-01.png" alt="logo">
+        </div>
+        <div class="right-nav">
+            <h1>bliss customer service e-log</b></h1>
+        </div>
+    </header>
+<nav class="bg-white dark:bg-white">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
   <div class="flex md:order-2">
     <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1" >
@@ -32,25 +40,25 @@ $result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY name DESC")
         </svg>
         <span class="sr-only">Search icon</span>
       </div>
-      <input type="text" id="search-navbar" class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-white focus:ring-blue-500 focus:border-blue-500 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
+      <input type="text" id="search-navbar" class="block w-full p-2 pl-10 text-sm text-black border border-gray-300 rounded-lg bg-white focus:ring-blue-500 focus:border-blue-500 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
     </div>
   </div>
     <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
       <div class="relative mt-3 md:hidden">
-        <input type="text" id="search-navbar" class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
+        <input type="text" id="search-navbar" class="block w-full p-2 pl-10 text-sm text-black border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
       </div>
       <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border md:flex-row md:space-x-8 md:mt-0 md:border-0">
         <li>
-        <a href="home.php"><i class="material-icons block py-2 pl-2 pr-2 text-white text-xl">home</i></a>
+        <a href="home.php"><i class="material-icons block py-2 pl-2 pr-2 text-black text-xl">home</i></a>
         </li>
         <li>
-          <a href="#" class="block py-2 pl-2 pr-2 text-white">DATA</a>
+          <a href="#" class="block py-2 pl-2 pr-2 text-black">DATA</a>
         </li>
         <li>
-          <a href="#" class="block py-2 pl-2 pr-2 text-white">COMPLAINT</a>
+          <a href="#" class="block py-2 pl-2 pr-2 text-black">COMPLAINT</a>
         </li>
         <li>
-          <a href="#" class="block py-2 pl-2 pr-2 text-white">INFO</a>
+          <a href="#" class="block py-2 pl-2 pr-2 text-black">INFO</a>
         </li>
       </ul>
     </div>
@@ -59,7 +67,7 @@ $result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY name DESC")
 
     <center class="underline font-bold text-xl pt-6">SENARAI ADUAN</center>
     <div class="relative overflow-x-auto shadow-md">
-    <table class="w-full text-sm text-left text-grey-500 dark:text-gray-400">
+    <table class="w-full text-sm text-center text-grey-500 dark:text-gray-400">
         <thead class="text-xs text-black uppercase bg-gray-50 dark:bg-gray-700 dark:text-black">
             <tr>
                 <th scope="col" class="px-6 py-3">
@@ -103,14 +111,14 @@ $result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY name DESC")
                 ?>  
                 <tr>
                     <td class="border-r text-2xl"><?php echo $bil; ?></td>
-                    <td class="border-r"><?php echo $r['date']; ?></td>
-                    <td class="border-r"><?php echo $r['name']; ?></td>
-                    <td class="border-r"><?php echo $r['nohp']; ?></td>
-                    <td class="border-r"><?php echo $r['category']; ?></td>
-                    <td class="border-r"><?php echo $r['type']; ?></td>
+                    <td class="border-r text-2xl"><?php echo $r['date']; ?></td>
+                    <td class="border-r text-2xl"><?php echo $r['name']; ?></td>
+                    <td class="border-r text-2xl"><?php echo $r['nohp']; ?></td>
+                    <td class="border-r text-2xl"><?php echo $r['category']; ?></td>
+                    <td class="border-r text-2xl"><?php echo $r['type']; ?></td>
                     <td class="border-r"><?php echo $r['details']; ?></td>
-                    <td class="border-r"><?php echo $r['lcid']; ?></td>
-                    <td class="border-r"><?php echo $r['lcowner']; ?></td>
+                    <td class="border-r text-2xl"><?php echo $r['lcid']; ?></td>
+                    <td class="border-r text-2xl"><?php echo $r['lcowner']; ?></td>
                     <td>
                         <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-3 border border-red-700 rounded">
                             <a href='delete.php?name=<?php echo $r['name'];?>'>DELETE</a>
