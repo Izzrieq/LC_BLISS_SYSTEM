@@ -71,7 +71,7 @@ $result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY name DESC")
         <thead class="text-xs text-black uppercase bg-gray-50 dark:bg-gray-700 dark:text-black">
             <tr>
                 <th scope="col" class="px-6 py-3">
-                    NO.
+                    ID.
                 </th>
                 <th scope="col" class="px-6 py-3">
                     DATE/TIME
@@ -89,15 +89,6 @@ $result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY name DESC")
                     TYPE
                 </th> 
                 <th scope="col" class="px-6 py-3">
-                    DETAILS
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    LC ID
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    LC OWNER
-                </th>
-                <th scope="col" class="px-6 py-3">
                     STATUS
                 </th>
             </tr>
@@ -111,14 +102,14 @@ $result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY name DESC")
                 ?>  
                 <tr>
                     <td class="border-r text-2xl"><?php echo $bil; ?></td>
-                    <td class="border-r text-xl"><?php echo $r['date']; ?></td>
-                    <td class="border-r text-xl"><?php echo $r['name']; ?></td>
-                    <td class="border-r text-xl"><?php echo $r['nohp']; ?></td>
-                    <td class="border-r text-xl"><?php echo $r['category']; ?></td>
-                    <td class="border-r text-xl"><?php echo $r['type']; ?></td>
+                    <td class="border-r text-2xl"><?php echo $r['date']; ?></td>
+                    <td class="border-r text-2xl"><?php echo $r['name']; ?></td>
+                    <td class="border-r text-2xl"><?php echo $r['nohp']; ?></td>
+                    <td class="border-r text-2xl"><?php echo $r['category']; ?></td>
+                    <td class="border-r text-2xl"><?php echo $r['type']; ?></td>
                     <td class="border-r"><?php echo $r['details']; ?></td>
-                    <td class="border-r text-xl"><?php echo $r['lcid']; ?></td>
-                    <td class="border-r text-xl"><?php echo $r['lcowner']; ?></td>
+                    <td class="border-r text-2xl"><?php echo $r['lcid']; ?></td>
+                    <td class="border-r text-2xl"><?php echo $r['lcowner']; ?></td>
                     <td>
                         <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-3 border border-red-700 rounded">
                             <a href='delete.php?name=<?php echo $r['name'];?>'>DELETE</a>
@@ -126,7 +117,7 @@ $result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY name DESC")
                         <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-3 border border-gray-700 rounded">
                             <a href='update.php?name=<?php echo $r['name'];?>'>UPDATE</a>
                         </button>
-                        <input type="checkbox" class="appearance-none checked:bg-blue-500" />
+                        <a href='detailcomplaint.php?id=<?php echo $r['id'];?>'>Read More...</a>
                     </td>
                 </tr>
                 <?php $bil = $bil + 1; 
@@ -134,7 +125,7 @@ $result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY name DESC")
                 ?>
     </table> 
     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 border border-blue-700 rounded">
-        <a href="addcomplaint.php">ADD ISSUE</a>
+        <a href="issue.php">ADD ISSUE</a>
     </button>        
     <nav class="flex items-center justify-between pt-4" aria-label="Table navigation">
         <span class="text-sm font-normal text-gray-500 dark:text-gray-400">Showing <span class="font-semibold text-gray-900 dark:text-white">1-10</span> of <span class="font-semibold text-gray-900 dark:text-white">1000</span></span>
