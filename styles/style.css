@@ -40,7 +40,7 @@ body {
     background-size: cover;
   }
   form{
-    margin-top: 5%;
+    margin-top: 3%;
     padding: 10px;
     max-width: 30%;
     /* From https://css.glass */
@@ -101,7 +101,7 @@ footer{
     margin-top: auto;
 }
 footer p{
-    font-size: 20px;
-    padding: 10px;
+    font-size: 15px;
+    padding: 5px;
     color: white;
 }
