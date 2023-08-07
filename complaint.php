@@ -111,14 +111,14 @@ $result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY name DESC")
                 ?>  
                 <tr>
                     <td class="border-r text-2xl"><?php echo $bil; ?></td>
-                    <td class="border-r text-2xl"><?php echo $r['date']; ?></td>
-                    <td class="border-r text-2xl"><?php echo $r['name']; ?></td>
-                    <td class="border-r text-2xl"><?php echo $r['nohp']; ?></td>
-                    <td class="border-r text-2xl"><?php echo $r['category']; ?></td>
-                    <td class="border-r text-2xl"><?php echo $r['type']; ?></td>
+                    <td class="border-r text-xl"><?php echo $r['date']; ?></td>
+                    <td class="border-r text-xl"><?php echo $r['name']; ?></td>
+                    <td class="border-r text-xl"><?php echo $r['nohp']; ?></td>
+                    <td class="border-r text-xl"><?php echo $r['category']; ?></td>
+                    <td class="border-r text-xl"><?php echo $r['type']; ?></td>
                     <td class="border-r"><?php echo $r['details']; ?></td>
-                    <td class="border-r text-2xl"><?php echo $r['lcid']; ?></td>
-                    <td class="border-r text-2xl"><?php echo $r['lcowner']; ?></td>
+                    <td class="border-r text-xl"><?php echo $r['lcid']; ?></td>
+                    <td class="border-r text-xl"><?php echo $r['lcowner']; ?></td>
                     <td>
                         <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-3 border border-red-700 rounded">
                             <a href='delete.php?name=<?php echo $r['name'];?>'>DELETE</a>
