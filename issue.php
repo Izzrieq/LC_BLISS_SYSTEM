@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Issue</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="styles/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -17,17 +20,6 @@
         </div>
         <div class="right-nav">
             <h1>bliss customer service e-log</b></h1>
-            <nav class="navbar navbar-expand-lg">
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav">
-                            <a class="nav-link active" aria-current="page" href="home.php">Home</a>
-                            <a class="nav-link" href="data.php">Data</a>
-                            <a class="nav-link" href="complaint.php">Complaint</a>
-                            <a class="nav-link" href="logout.php">Logout</a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
         </div>
     </header>
     <form class="issue" action="/action_page.php">
