@@ -68,26 +68,26 @@ input{
     background-color: #c0c0c0;
     color: rgb(0, 0, 0);
 }
-button{
-    margin-bottom: 5%;
-    padding: 5px;
-    background-color: #008CBA;
-    color: white;
-    border: none;
-    border-radius: 5px;
+.homebodycard{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    width: 500px;
+    background-color: aqua;
+}
+
+.card-box{
+    height: 100px;
     width: 100px;
+    background-color: #ff0000;
 }
-button:hover{
-    background-color: #037297;
-}
-
-
 footer{
     background-color: #004157;
     margin-top: auto;
 }
 footer p{
-    font-size: 30px;
+    font-size: 5px;
     padding: 10px;
     color: white;
 }
