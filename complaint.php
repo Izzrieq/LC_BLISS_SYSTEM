@@ -88,7 +88,7 @@ $result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY name DESC")
                 <th scope="col" class="px-6 py-3">
                     TYPE
                 </th> 
-                <th scope="col" class="px-6 py-3">
+                <th scope="col" class="px-4 py-3">
                     STATUS
                 </th>
             </tr>
@@ -106,15 +106,12 @@ $result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY name DESC")
                     <td class="border-r text-l"><?php echo $r['name']; ?></td>
                     <td class="border-r text-l"><?php echo $r['nohp']; ?></td>
                     <td class="border-r text-l"><?php echo $r['category']; ?></td>
-                    <td class="border-r text-l"><?php echo $r['type']; ?></td>
-                    <td>
-                        <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-3 border border-red-700 rounded">
-                            <a href='delete.php?name=<?php echo $r['name'];?>'>DELETE</a>
-                        </button>
-                        <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-3 border border-gray-700 rounded">
-                            <a href='update.php?name=<?php echo $r['name'];?>'>UPDATE</a>
-                        </button>
-                        <a href='detailcomplaint.php?id=<?php echo $r['id'];?>'>Read More...</a>
+                    <td class="border-r text-xl"><?php echo $r['type']; ?></td>
+                    <td class="icon-status">
+                        <a href='update.php?name=<?php echo $r['name'];?>'><img src="assets/update.png" alt=""></a>
+                        <a href='delete.php?name=<?php echo $r['name'];?>'><img src="assets/delete.png"></a>
+                        <a href='detailcomplaint.php?name=<?php echo $r['id'];?>'><img src="assets/more.png"></a>
+                        <input class="checkbox" type="checkbox" name="checkbox" id="checkbox">
                     </td>
                 </tr>
                 <?php $bil = $bil + 1; 

@@ -110,6 +110,21 @@ tr{
 td{
     width: 200px;
 }
+.icon-status{
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+}
+.icon-status a img{
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+}
+.checkbox{
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+}
 .issue{
     background-color: white;
     border: 1px solid black;
