@@ -101,6 +101,7 @@ $result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY name DESC")
                 while ($r = mysqli_fetch_array($result)){
                 ?>  
                 <tr>
+<<<<<<< HEAD
                     <td class="border-r text-l"><?php echo $r['id']; ?></td>
                     <td class="border-r text-l"><?php echo $r['date']; ?></td>
                     <td class="border-r text-l"><?php echo $r['name']; ?></td>
@@ -112,6 +113,25 @@ $result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY name DESC")
                         <a href='delete.php?name=<?php echo $r['name'];?>'><img src="assets/delete.png"></a>
                         <a href='detailcomplaint.php?name=<?php echo $r['id'];?>'><img src="assets/more.png"></a>
                         <input class="checkbox" type="checkbox" name="checkbox" id="checkbox">
+=======
+                    <td class="border-r text-2xl"><?php echo $bil; ?></td>
+                    <td class="border-r text-2xl"><?php echo $r['date']; ?></td>
+                    <td class="border-r text-2xl"><?php echo $r['name']; ?></td>
+                    <td class="border-r text-2xl"><?php echo $r['nohp']; ?></td>
+                    <td class="border-r text-2xl"><?php echo $r['category']; ?></td>
+                    <td class="border-r text-2xl"><?php echo $r['type']; ?></td>
+                    <td class="border-r"><?php echo $r['details']; ?></td>
+                    <td class="border-r text-2xl"><?php echo $r['lcid']; ?></td>
+                    <td class="border-r text-2xl"><?php echo $r['lcowner']; ?></td>
+                    <td>
+                        <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-3 border border-red-700 rounded">
+                            <a href='delete.php?name=<?php echo $r['name'];?>'>DELETE</a>
+                        </button>
+                        <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-3 border border-gray-700 rounded">
+                            <a href='update.php?name=<?php echo $r['name'];?>'>UPDATE</a>
+                        </button>
+                        <a href='detailcomplaint.php?id=<?php echo $r['id'];?>'>Read More...</a>
+>>>>>>> dd6089b5ef2e18c54b27ed30fc76f1b1ac049b86
                     </td>
                 </tr>
                 <?php $bil = $bil + 1; 
