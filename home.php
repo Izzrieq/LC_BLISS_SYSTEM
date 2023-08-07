@@ -15,7 +15,9 @@
             <h1>bliss customer service e-log</b></h1>
         </div>
     </header>
-        <div class="homebodycard">
+    
+        <div class="home-body-card">
+        <h1>Our Services</h1>
             <div class="card-box">
 
             </div>
