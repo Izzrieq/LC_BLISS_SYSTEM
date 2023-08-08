@@ -1,3 +1,25 @@
+<?php
+include('component/db_conn.php'); 
+if(isset($_POST['name'])) {    
+    $id = $_POST['id'];
+    $date = date("Y-m-d H:i:s");     
+    $name = $_POST['name'];
+    $category = $_POST['category'];
+    $type = $_POST['type'];
+    $nohp = $_POST['nohp'];
+    $details = $_POST['details'];
+    $lcid = $_POST['lcid'];
+	$lcowner = $_POST['lcowner'];
+    $sql = "INSERT INTO complaintbliss (id, date, name, category, type, nohp, details, lcid, lcowner)
+    VALUES ('$id', '$date', '$name', '$category', '$type', '$nohp', '$details', '$lcid', '$lcowner')";
+    $result = mysqli_query($conn, $sql); 
+    if ($result)
+        echo "<script>alert('Berjaya kemaskini')</script>";
+    else 
+        echo "<script>alert('Tidak berjaya kemaskini')</script>";
+    echo "<script>window.location='complaint.php'</script>";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,37 +44,43 @@
             <h1>bliss customer service e-log</b></h1>
         </div>
     </header>
-    <form class="issue" action="/action_page.php">
+    <form class="issue" action="issue.php" method="POST">
         <fieldset>
             <legend>New Issue</legend>
+            <!-- make id auto increment -->
+             <label for="id">ID:</label> <br>
+            <input type="text" id="id" name="id"><br><br>
             <label for="name">Name:</label> <br>
             <input type="text" id="name" name="name"><br><br>
-            <label for="category">Category:</label> <br>
+            <label id="category" for="category">Category:</label> <br>
             <select name="category" id="category">
-                <option value="#" selected>Select</option>
+                <option value="#" disabled selected>Select: </option>
                 <option value="complaint">Complaint</option>
                 <option value="suggestion">Suggestion</option>
                 <option value="general">General</option>
                 <option value="enquiry">Enquiry</option>
             </select> <br> <br>
-            <label for="type">Type:</label> <br>
+            <label id="category" for="type">Type:</label> <br>
             <select name="type" id="type">
-                <option value="#" selected>Select</option>
+                <option value="#" disabled selected>Select:</option>
                 <option value="management">Management</option>
                 <option value="sales">Sales</option>
                 <option value="registration">Registration</option>
                 <option value="payment">Payment</option>
                 <option value="kindy">kindy</option>
             </select> <br> <br>
-            <label for="detailsComplaint">Details Complaint:</label> <br>
-            <textarea id="detailsComplaint" name="detailsComplaint" rows="3" cols="40">
+            <label for="details">Details Complaint:</label> <br>
+            <textarea id="details" name="details" rows="3" cols="40">
   </textarea> <br> <br>
+  <!-- drop up -->
             <label for="lcid">LC ID:</label>
             <input type="text" id="lcid" name="lcid"> <br> <br>
+            <!-- fetch num phone -->
             <label for="nohp">NO. HP:</label>
             <input type="text" id="nohp" name="nohp"><br><br>
+            <!-- fetch num owner -->
             <label for="lcowner">LC OWNER:</label><br>
-            <input type="text" id="nohp" name="nohp"><br><br>
+            <input type="text" id="lcowner" name="lcowner"><br><br>
             <button type="submit" class="btn btn-outline-primary">Submit</button>
             <button type="reset" class="btn btn-outline-danger">Reset</button>
         </fieldset>

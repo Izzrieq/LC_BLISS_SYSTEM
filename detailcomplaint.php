@@ -43,17 +43,42 @@ include "component/db_conn.php";
                 <th scope="col" class="px-6 py-3">
                     OWNER
                 </th> 
+
+                <!-- action -->
                 <th scope="col" class="px-6 py-3">
                     STATUS
                 </th>
+                <!-- add on post n fetch email -->
             </tr>
         </thead>
         <tbody>
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
              <?php
-                $result = mysqli_query($conn,"SELECT * FROM complaintbliss LIMIT 0, 10"); 
-                $bil = 1;
-                while ($r = mysqli_fetch_array($result)){
+                $id = $_GET['id'];
+                $result = mysqli_query($conn,"SELECT * FROM complaintbliss WHERE id = '$id'"); 
+                while ($r = mysqli_fetch_array($result))
+
+                // $query = "SELECT * FROM complaintbliss  "
+                // $statement = $conn -> prepare($query);
+                // if($statement->rowCount()>0){
+                //     $result =$statement->fetchAll();
+                //     foreach($result as $row)
+                //     {
+                //         $output .= '
+                //         <tr>
+                //             <td>'.$row["details"].'</td>
+                //         </tr>
+                //         ';
+                //     }
+                // }
+                // else{
+                //     $output .= '
+                //   <tr>
+                //     <td>No Data Found</td>
+                //   </tr> 
+                //     ';
+                // }
+                {
                 ?>  
                 <tr>
                     <td class="border-r text-l"><?php echo $r['date']; ?></td>
@@ -62,10 +87,10 @@ include "component/db_conn.php";
                     <td class="border-r text-l"><?php echo $r['lcid']; ?></td>
                     <td class="border-r text-l"><?php echo $r['lcowner']; ?></td>
                     <td>
-                        
+                    <input class="checkbox" type="checkbox" name="checkbox" id="checkbox">
                     </td>
                 </tr>
-                <?php $bil = $bil + 1; 
+                <?php
                 }
                 ?>
     </table> 
