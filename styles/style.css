@@ -39,7 +39,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
   }
-  form{
+  .login{
     margin-top: 3%;
     padding: 10px;
     max-width: 30%;
@@ -51,11 +51,11 @@ body {
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
-form h2{
+.login h2{
     position: absolute;
     padding: 10px;
 }
-form img{
+.login img{
     margin-top: 10%;
     height: 100px;
     width: 100px;
@@ -126,14 +126,30 @@ td{
     margin: 10px;
 }
 .issue{
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
 }
-
 .navbar-nav{
    margin-left: 200px;
+}
+.customer_complain h1, .detail_lc h1{
+    font-size: 25px;
+    text-align: center;
+}
+.customer_complain{
+    border: 1px solid black;
+    display: grid;
+    padding: 30px;
+}
+.detail_lc{
+    border: 1px solid black;
+    padding: 30px;
+}
+input,select{
+    width: 200px;
 }

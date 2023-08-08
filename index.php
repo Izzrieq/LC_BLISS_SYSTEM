@@ -20,7 +20,7 @@
         </div>
     </header>
     <center>
-    <form action="login.php" method="post">
+    <form class="login" action="login.php" method="post">
      	<h2>LOGIN</h2>
         <img src="assets/user.png" alt="user">
         <br>

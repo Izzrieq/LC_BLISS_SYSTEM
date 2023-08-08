@@ -32,7 +32,7 @@ include "component/db_conn.php";
                     DATE/TIME
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    NAME
+                    CUSTOMER NAME
                 </th>
                 <th scope="col" class="px-6 py-3">
                     DETAILS
@@ -43,10 +43,13 @@ include "component/db_conn.php";
                 <th scope="col" class="px-6 py-3">
                     OWNER
                 </th> 
+                <th scope="col" class="px-6 py-3">
+                    LC OWNER NO.HP
+                </th> 
 
                 <!-- action -->
                 <th scope="col" class="px-6 py-3">
-                    STATUS
+                    ACTION
                 </th>
                 <!-- add on post n fetch email -->
             </tr>
@@ -82,10 +85,11 @@ include "component/db_conn.php";
                 ?>  
                 <tr>
                     <td class="border-r text-l"><?php echo $r['date']; ?></td>
-                    <td class="border-r text-l"><?php echo $r['name']; ?></td>
+                    <td class="border-r text-l"><?php echo $r['cname']; ?></td>
                     <td class="border-r text-l"><?php echo $r['details']; ?></td>
                     <td class="border-r text-l"><?php echo $r['lcid']; ?></td>
                     <td class="border-r text-l"><?php echo $r['lcowner']; ?></td>
+                    <td class="border-r text-l"><?php echo $r['ownernohp']; ?></td>
                     <td>
                     <input class="checkbox" type="checkbox" name="checkbox" id="checkbox">
                     </td>

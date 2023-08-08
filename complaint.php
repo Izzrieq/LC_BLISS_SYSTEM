@@ -31,17 +31,7 @@ $result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY name DESC")
       <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
       </svg>
-      <span class="sr-only">Search</span>
     </button>
-    <div class="relative hidden md:block">
-      <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-        </svg>
-        <span class="sr-only">Search icon</span>
-      </div>
-      <input type="text" id="search-navbar" class="block w-full p-2 pl-10 text-sm text-black border border-gray-300 rounded-lg bg-white focus:ring-blue-500 focus:border-blue-500 dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
-    </div>
   </div>
     <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
       <div class="relative mt-3 md:hidden">
@@ -65,7 +55,7 @@ $result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY name DESC")
   </div>
 </nav>
 
-    <center class="underline font-bold text-xl pt-6">SENARAI ADUAN</center>
+    <center class="underline font-bold text-xl pt-6">REPORT LIST</center>
     <div class="relative overflow-x-auto shadow-md">
     <table class="w-full text-sm text-center text-grey-500 dark:text-gray-400">
         <thead class="text-xs text-black uppercase bg-gray-50 dark:bg-gray-700 dark:text-black">
@@ -77,10 +67,10 @@ $result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY name DESC")
                     DATE/TIME
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    NAME
+                    CUSTOMER NAME
                 </th>
                 <th scope="col" class="px-6 py-3">
-                    NO.HP
+                    CUSTOMER NO.HP
                 </th>
                 <th scope="col" class="px-6 py-3">
                     CATEGORY
@@ -103,13 +93,13 @@ $result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY name DESC")
                 <tr>
                     <td class="border-r text-l"><?php echo $r['id']; ?></td>
                     <td class="border-r text-l"><?php echo $r['date']; ?></td>
-                    <td class="border-r text-l"><?php echo $r['name']; ?></td>
-                    <td class="border-r text-l"><?php echo $r['nohp']; ?></td>
+                    <td class="border-r text-l"><?php echo $r['cname']; ?></td>
+                    <td class="border-r text-l"><?php echo $r['cnohp']; ?></td>
                     <td class="border-r text-l"><?php echo $r['category']; ?></td>
                     <td class="border-r text-xl"><?php echo $r['type']; ?></td>
                     <td class="icon-status">
-                        <a href='update.php?name=<?php echo $r['name'];?>'><img src="assets/update.png" alt=""></a>
-                        <a href='delete.php?name=<?php echo $r['name'];?>'><img src="assets/delete.png"></a>
+                        <a href='update.php?id=<?php echo $r['id'];?>'><img src="assets/update.png" alt=""></a>
+                        <a href='delete.php?id=<?php echo $r['id'];?>'><img src="assets/delete.png"></a>
                         <a href='detailcomplaint.php?id=<?php echo $r['id'];?>'><img src="assets/more.png"></a>
                         <input class="checkbox" type="checkbox" name="checkbox" id="checkbox">
                     </td>
@@ -117,7 +107,7 @@ $result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY name DESC")
                 <?php $bil = $bil + 1; 
                 }
                 ?>
-    </table> 
+    </table>  
     <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 border border-blue-700 rounded">
         <a href="issue.php">ADD ISSUE</a>
     </button>        
