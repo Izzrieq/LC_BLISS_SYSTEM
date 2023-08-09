@@ -35,7 +35,49 @@ if(isset($_POST['cname'])) {
     <link rel="stylesheet" href="styles/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <!-- js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js"></script>
+
 </head>
+<script>
+    $(document).ready(function () {
+        $("select").select2();
+    });
+
+
+    //     document.addEventListener('DOMContentLoaded', function() {
+    //     // Your code here
+
+    //     const lcid = document.getElementById('lcid');
+    //     const lcownerf = document.getElementById('lcowner');
+    //     const ownernohpf = document.getElementById('ownernohp');
+    //     // Add references to other input fields as needed
+
+    //     lcid.addEventListener('change', function() {
+    //         const selectedValue = lcid.value;
+    //         if (selectedValue !== '') {
+    //             // Make an AJAX request to fetch data based on the selected option
+    //             fetch('component/ajax.php?lcid=' + selectedValue)
+    //                 .then(response => response.json())
+    //                 .then(data => {
+    //                     // Autofill input fields with data received from the server
+    //                     lcownerf.value = data.lcowner;
+    //                     ownernohpf.value = data.ownernohp;
+    //                     // Update other input fields as needed
+    //                 });
+    //         } else {
+    //             // Clear input fields if no option is selected
+    //             lcownerf.value = '';
+    //             ownernohpf.value = '';
+    //             // Clear other input fields as needed
+    //         }
+    //     });
+    //   }); 
+</script>
+
 <body>
     <header>
         <div class="left-nav">
@@ -45,23 +87,24 @@ if(isset($_POST['cname'])) {
             <h1>bliss customer service e-log</b></h1>
         </div>
     </header>
-    <form class="issue" action="issue.php" method="POST">
-            <div class="customer_complain">
-                 <h1>Customer Complain</h1> <br>
-                <label for="cname">Name:</label>
-                <input type="text" id="cname" name="cname">
-                <label for="cnohp">Customer No.HP:</label> 
-                <input type="tel" id="cnohp" name="cnohp" placeholder="011-222-3456" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br><br>
-                <label id="category" for="category">Category:</label>
-                <select name="category" id="category">
+    <form id="issueform" class="issue" action="issue.php" method="POST">
+        <div class="customer_complain">
+            <h1>Customer Complain</h1> <br>
+            <label for="cname">Name:</label>
+            <input type="text" id="cname" name="cname">
+            <label for="cnohp">Customer No.HP:</label>
+            <input type="tel" id="cnohp" name="cnohp" placeholder="011-222-3456" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                required><br><br>
+            <label id="category" for="category">Category:</label>
+            <select name="category" id="category">
                 <option value="#" disabled selected>Select: </option>
                 <option value="complaint">Complaint</option>
                 <option value="suggestion">Suggestion</option>
                 <option value="general">General</option>
                 <option value="enquiry">Enquiry</option>
-                </select>
-                <label id="type" for="type">Type:</label>
-                <select name="type" id="type">
+            </select>
+            <label id="type" for="type">Type:</label>
+            <select name="type" id="type">
                 <option value="#" disabled selected>Select:</option>
                 <option value="management">Management</option>
                 <option value="sales">Sales</option>
@@ -71,23 +114,39 @@ if(isset($_POST['cname'])) {
             </select> <br> <br>
             <label for="details">Details Complaint:</label>
             <textarea id="details" name="details" rows="3" cols="40">
-            </textarea> <br> <br>  
+            </textarea> <br> <br>
             <button type="button" class="btn btn-outline-warning"><a href="complaint.php">Return</a></button>
-            </div>
+        </div>
 
-            <div class="detail_lc">
-                 <h1>Detail LC Complain</h1> <br>
-                <label for="lcid">LC ID:</label><br>
-                <input type="text" id="lcid" name="lcid"><br><br>
-                <label for="lcowner">LC Owner Name:</label> <br>
-                <input type="text" id="lcowner" name="lcowner" required><br><br>
-                <label id="ownernohp" for="ownernohp">LC Owner No.Hp:</label><br>
-                <input type="tel" id="ownernohp" name="ownernohp" placeholder="011-222-3456" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br> <br>
-                <button type="submit" class="btn btn-outline-primary">Submit</button>
-                <button type="reset" class="btn btn-outline-danger">Reset</button>
-            </div>
+        <div class="detail_lc">
+            <h1>Detail LC Complain</h1> <br>
+
+            <?php
+                $query = "SELECT * FROM lcdetails";
+
+                $result1 = mysqli_query($conn, $query);
+                
+            ?>
+            <label for="lcid">LC ID:</label><br>
+            <select name="lcid" id="lcid">
+                <option disabled selected>Select: </option>
+                <option value="-">-</option>
+                <?php
+                while($row1 = mysqli_fetch_array($result1)):;
+                ?>
+                <option><?php echo $row1[3]; ?></option>
+                <?php endwhile; ?>
+            </select> <br>
+            <br> <br>
+            <label for="lcowner">LC Owner Name:</label> <br>
+            <input type="text" id="lcowner" name="lcowner" required><br><br>
+            <label id="ownernohp" for="ownernohp">LC Owner No.Hp:</label><br>
+            <input type="tel" id="ownernohp" name="ownernohp" placeholder="011-222-3456"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br> <br>
+            <button type="submit" class="btn btn-outline-primary">Submit</button>
+            <button type="reset" class="btn btn-outline-danger">Reset</button>
+        </div>
     </form>
-
     <footer>
         <center>
             <p>© 2023 Little Caliph International</p>
