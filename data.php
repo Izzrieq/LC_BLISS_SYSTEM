@@ -226,13 +226,19 @@
                                     class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
                                     type='text' disabled>
                             </div>
-                            <div class='w-full md:w-full px-3 mb-6'>
-                                <label
-                                    class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>No.Block/House</label>
-                                <textarea
-                                    class='bg-white rounded-md border leading-normal resize-none w-full h-20 py-2 px-3 shadow-inner border border-gray-400 font-medium placeholder-gray-700 focus:outline-none focus:bg-white'
-                                    disabled>
-                                </textarea>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class='w-full md:w-1/5 px-3 mb-6'>
+                                    <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>No.Block/House</label>
+                                    <input
+                                        class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
+                                        type='text' disabled>
+                                </div>
+                                <div class='w-full md:w-full px-3 mb-6 ml-8'>
+                                    <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Street</label>
+                                    <input
+                                        class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
+                                        type='text' disabled>
+                                </div>
                             </div>
                             <div class='w-full md:w-full px-3 mb-6'>
                                 <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Owner
