@@ -13,7 +13,7 @@
 <body>
     <header>
         <div class="left-nav">
-            <img src="assets/LC_COMPANY LOGO_MARCH 2023-01.png" alt="logo">
+            <img src="assets/images/LC_COMPANY LOGO_MARCH 2023-01.png" alt="logo">
         </div>
         <div class="right-nav">
             <h1>bliss customer service e-log</b></h1>

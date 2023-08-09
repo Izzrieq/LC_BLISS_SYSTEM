@@ -1,5 +1,5 @@
 <?php
-include "component/db_conn.php";
+include "config/db_conn.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
