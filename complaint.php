@@ -1,7 +1,7 @@
 <?php
 include "component/db_conn.php";
 
-$result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY name DESC");
+$result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY cname DESC");
 ?>
 <!DOCTYPE html>
 <html lang="en">
