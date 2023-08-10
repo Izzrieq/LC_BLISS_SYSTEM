@@ -32,7 +32,7 @@ $data = array();
  
 while($row = mysqli_fetch_assoc($empRecords)){
     $id = $row['id'];
-    $idarray = " $id";
+    $idarray = "$id";
     $data[] = array(
             "id"=>$idarray,
             "date"=>$row['date'],
@@ -40,7 +40,9 @@ while($row = mysqli_fetch_assoc($empRecords)){
             "cnohp"=>$row['cnohp'],
             "category"=>$row['category'],
             "type"=>$row['type'],
+            
         );
+    
 }
  
 ## Response

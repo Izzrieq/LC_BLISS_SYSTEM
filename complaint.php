@@ -106,19 +106,11 @@ $result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY id DESC");
                     <td class="border-r text-l"><?php echo $r['cnohp']; ?></td>
                     <td class="border-r text-l"><?php echo $r['category']; ?></td>
                     <td class="border-r text-xl"><?php echo $r['type']; ?></td>
-<<<<<<< HEAD
                     <td class="d-flex justify-content-center">
                         <a href='update.php?id=<?php echo $r['id'];?>'><img src="assets/images/update.png" alt=""></a>
                         <a href='delete.php?id=<?php echo $r['id'];?>'><img src="assets/images/delete.png"></a>
                         <a href='detailcomplaint.php?id=<?php echo $r['id'];?>'><img src="assets/images/more.png"></a>
                         <!-- <input class="checkbox" type="checkbox" name="checkbox" id="checkbox"> -->
-=======
-                    <td class="icon-status">
-                        <a href='update.php?id=<?php echo $r['id'];?>'><img src="assets/update.png" alt=""></a>
-                        <a href='delete.php?id=<?php echo $r['id'];?>'><img src="assets/delete.png"></a>
-                        <a href='detailcomplaint.php?id=<?php echo $r['id'];?>'><img src="assets/more.png"></a>
-                        <input class="checkbox" type="checkbox" name="checkbox" id="checkbox">
->>>>>>> 77b889b3f4561359b7239b244cd57a52d3b8bd12
                     </td>
                 </tr>
                 <?php $bil = $bil + 1; 

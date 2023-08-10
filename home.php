@@ -11,12 +11,12 @@
 </head>
 
 <body>
-    <header class="d-flex justify-content-between ">
+    <header class="d-flex justify-content-between bg-white ">
         <div class="w-25 p-0 h-75 d-inline-block">
             <img  class="w-100 m-0 h-100 d-inline-block" src="assets/images/LC_COMPANY LOGO_MARCH 2023-01.png" alt="logo">
         </div>
         <div class="p-0 ">
-            <h1 class="mt-3 m-3 h1 text-white">BLISS CUSTOMER E-LOG</h1>
+            <h1 class="mt-3 m-3 h1 text-primary">BLISS CUSTOMER E-LOG</h1>
         </div>
     </header>
     <h1 class="text-center">Our Services</h1>
