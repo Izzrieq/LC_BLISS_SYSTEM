@@ -10,21 +10,36 @@ $result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY cname DESC"
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Complaint</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="styles/style.css">
 
 </head>
 <body>
-<header>
+<!-- <header>
         <div class="left-nav">
-            <img src="assets/LC_COMPANY LOGO_MARCH 2023-01.png" alt="logo">
+            <img src="assets/images/LC_COMPANY LOGO_MARCH 2023-01.png" alt="logo">
         </div>
         <div class="right-nav">
             <h1>bliss customer service e-log</b></h1>
         </div>
-    </header>
-<nav class="bg-white dark:bg-white">
+    </header> -->
+    <nav class="navbar navbar-expand-sm w-full bg-white">
+  <!-- Brand/logo -->
+  <a class="navbar-brand" href="#"><img class="h-100 d-inline-block w-1/2 p-3" src="assets/images/LC_COMPANY LOGO_MARCH 2023-01.png" alt="logo"></a>
+  
+  <!-- Links -->
+  <input  type="text" name="search" id="search_text" class="form-control form-control-lg rounded-0 border-primary ml-5 w-25 p-3" placeholder="Search...">
+</nav>
+<!-- <nav class="bg-white dark:bg-white">
   <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
   <div class="flex md:order-2">
     <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1" >
@@ -53,7 +68,7 @@ $result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY cname DESC"
       </ul>
     </div>
   </div>
-</nav>
+</nav> -->
 
     <center class="underline font-bold text-xl pt-6">REPORT LIST</center>
     <div class="relative overflow-x-auto shadow-md">
@@ -87,7 +102,6 @@ $result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY cname DESC"
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
              <?php
                 $result = mysqli_query($conn,"SELECT * FROM complaintbliss LIMIT 0, 10"); 
-                $bil = 1;
                 while ($r = mysqli_fetch_array($result)){
                 ?>  
                 <tr>
@@ -98,13 +112,13 @@ $result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY cname DESC"
                     <td class="border-r text-l"><?php echo $r['category']; ?></td>
                     <td class="border-r text-xl"><?php echo $r['type']; ?></td>
                     <td class="icon-status">
-                        <a href='update.php?id=<?php echo $r['id'];?>'><img src="assets/update.png" alt=""></a>
-                        <a href='delete.php?id=<?php echo $r['id'];?>'><img src="assets/delete.png"></a>
-                        <a href='detailcomplaint.php?id=<?php echo $r['id'];?>'><img src="assets/more.png"></a>
+                        <a href='update.php?id=<?php echo $r['id'];?>'><img src="assets/images/update.png" alt=""></a>
+                        <a href='delete.php?id=<?php echo $r['id'];?>'><img src="assets/images/delete.png"></a>
+                        <a href='detailcomplaint.php?id=<?php echo $r['id'];?>'><img src="assets/images/more.png"></a>
                         <input class="checkbox" type="checkbox" name="checkbox" id="checkbox">
                     </td>
                 </tr>
-                <?php $bil = $bil + 1; 
+                <?php
                 }
                 ?>
     </table>  
