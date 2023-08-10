@@ -1,11 +1,14 @@
 <!doctype html>
 <html>
+
 <head>
-<title>DataTable AJAX pagination using PHP and Mysqli</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />    
-<link href='https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css' rel='stylesheet' type='text/css'>
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <title>DataTable AJAX pagination using PHP and Mysqli</title>
+    <link href='https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 </head>
 <body >
 <div class="container" >
@@ -21,7 +24,6 @@
                     <th>CUSTOMER NO.HP</th>
                     <th>CATEGORY</th>
                     <th>TYPE</th>
-                    <th>STATUS</th>
                 </tr>
                 </thead>
                  
@@ -36,7 +38,7 @@
                 'serverSide': true,
                 'serverMethod': 'post',
                 'ajax': {
-                    'url':'ajaxfile.php'
+                    'url': 'ajaxfile.php'
                 },
                 pageLength: 5,
                 'columns': [
@@ -46,10 +48,10 @@
                     { data: 'cnohp' },
                     { data: 'category' },
                     { data: 'type' }
-                    
                 ]
             });
         });
-</script>
+    </script>
 </body>
+
 </html>

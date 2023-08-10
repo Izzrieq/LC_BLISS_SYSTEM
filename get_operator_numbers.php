@@ -1,5 +1,5 @@
 <?php
-include('../config/db_conn.php');
+include('config/db_conn.php');
 
 if (isset($_GET['ownername'])) {
     $ownername = $_GET['ownername'];
