@@ -24,56 +24,19 @@ $result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY id DESC");
 
 </head>
 <body>
-<!-- <header>
-        <div class="left-nav">
-            <img src="assets/images/LC_COMPANY LOGO_MARCH 2023-01.png" alt="logo">
+<header class="d-flex justify-content-between ">
+        <div class="w-25 p-0 h-75 d-inline-block">
+            <img  class="w-100 m-0 h-100 d-inline-block" src="assets/images/LC_COMPANY LOGO_MARCH 2023-01.png" alt="logo">
         </div>
-        <div class="right-nav">
-            <h1>bliss customer service e-log</b></h1>
+        <div class="p-0 ">
+            <h1 class="mt-3 m-3 h1 text-white">BLISS CUSTOMER E-LOG</h1>
         </div>
-    </header> -->
-    <nav class="navbar navbar-expand-sm w-full bg-white">
-  <!-- Brand/logo -->
-  <a class="navbar-brand" href="#"><img class="h-100 d-inline-block w-1/2 p-3" src="assets/images/LC_COMPANY LOGO_MARCH 2023-01.png" alt="logo"></a>
-  
-  <!-- Links -->
-  <input  type="text" name="search" id="search_text" class="form-control form-control-lg rounded-0 border-primary ml-5 w-25 p-3" placeholder="Search...">
-</nav>
-<!-- <nav class="bg-white dark:bg-white">
-  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
-  <div class="flex md:order-2">
-    <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1" >
-      <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-      </svg>
-    </button>
-  </div>
-    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
-      <div class="relative mt-3 md:hidden">
-        <input type="text" id="search-navbar" class="block w-full p-2 pl-10 text-sm text-black border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
-      </div>
-      <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border md:flex-row md:space-x-8 md:mt-0 md:border-0">
-        <li>
-        <a href="home.php"><i class="material-icons block py-2 pl-2 pr-2 text-black text-xl">home</i></a>
-        </li>
-        <li>
-          <a href="#" class="block py-2 pl-2 pr-2 text-black">DATA</a>
-        </li>
-        <li>
-          <a href="#" class="block py-2 pl-2 pr-2 text-black">COMPLAINT</a>
-        </li>
-        <li>
-          <a href="#" class="block py-2 pl-2 pr-2 text-black">INFO</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav> -->
+    </header>
 
-    <center class="underline font-bold text-xl pt-6">REPORT LIST</center>
+    <h1 class="font-bold h1 pt-6 text-center text-white mb-3">REPORT LIST</h1>
     <div class="relative overflow-x-auto shadow-md">
     <table class="w-full text-sm text-center text-grey-500 dark:text-gray-400">
-        <thead class="text-xs text-black uppercase bg-gray-50 dark:bg-gray-700 dark:text-black">
+        <thead class="text-xs text-black uppercase bg-white dark:bg-gray-700 dark:text-black">
             <tr>
                 <th scope="col" class="px-6 py-3">
                     ID
@@ -98,7 +61,7 @@ $result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY id DESC");
                 </th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="bg-white text-black">
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
              <?php
                 $result = mysqli_query($conn,"SELECT * FROM complaintbliss LIMIT 0, 10"); 
@@ -111,11 +74,11 @@ $result = mysqli_query($conn, "SELECT * FROM complaintbliss ORDER BY id DESC");
                     <td class="border-r text-l"><?php echo $r['cnohp']; ?></td>
                     <td class="border-r text-l"><?php echo $r['category']; ?></td>
                     <td class="border-r text-xl"><?php echo $r['type']; ?></td>
-                    <td class="icon-status">
+                    <td class="d-flex justify-content-center">
                         <a href='update.php?id=<?php echo $r['id'];?>'><img src="assets/images/update.png" alt=""></a>
                         <a href='delete.php?id=<?php echo $r['id'];?>'><img src="assets/images/delete.png"></a>
                         <a href='detailcomplaint.php?id=<?php echo $r['id'];?>'><img src="assets/images/more.png"></a>
-                        <input class="checkbox" type="checkbox" name="checkbox" id="checkbox">
+                        <!-- <input class="checkbox" type="checkbox" name="checkbox" id="checkbox"> -->
                     </td>
                 </tr>
                 <?php
