@@ -1,5 +1,5 @@
 <?php
-include('component/db_conn.php'); 
+include('config/db_conn.php'); 
 date_default_timezone_set("Asia/Kuala_Lumpur");
 if(isset($_POST['cname'])) {    
     $id = (isset($_POST['id']) ? $_POST['id'] : '');
@@ -81,7 +81,7 @@ if(isset($_POST['cname'])) {
 <body>
     <header>
         <div class="left-nav">
-            <img src="assets/LC_COMPANY LOGO_MARCH 2023-01.png" alt="logo">
+            <img src="assets/images/LC_COMPANY LOGO_MARCH 2023-01.png" alt="logo">
         </div>
         <div class="right-nav">
             <h1>bliss customer service e-log</b></h1>

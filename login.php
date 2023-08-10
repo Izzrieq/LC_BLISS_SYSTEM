@@ -1,6 +1,6 @@
 <?php 
 session_start(); 
-include "component/db_conn.php";
+include "config/db_conn.php";
 
 if (isset($_POST['username']) && isset($_POST['password'])) {
 
