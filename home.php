@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles/style.css">
+    <!-- <link rel="stylesheet" href="styles/style.css"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 
 <body>
-    <header>
-        <div class="left-nav">
-            <img src="assets/images/LC_COMPANY LOGO_MARCH 2023-01.png" alt="logo">
+    <header class="d-flex justify-content-between">
+        <div class="w-25 p-3 h-75 d-inline-block">
+            <img  class="w-100 p-3 h-100 d-inline-block" src="assets/images/LC_COMPANY LOGO_MARCH 2023-01.png" alt="logo">
         </div>
         <div class="right-nav">
             <h1>bliss customer service e-log</b></h1>
