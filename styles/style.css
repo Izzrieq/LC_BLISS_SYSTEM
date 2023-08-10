@@ -153,3 +153,7 @@ td{
 input,select{
     width: 200px;
 }
+.container{
+    margin: auto;
+    width: 50%;
+}

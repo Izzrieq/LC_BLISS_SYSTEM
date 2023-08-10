@@ -1,10 +1,14 @@
+<?php
+include_once  "component/db_conn.php";
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Page</title>
+    <title>TLCP Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -74,21 +78,20 @@
     </nav>
     <!-- component -->
     <!-- component -->
-    
-    <div class="container-box" style="display: flex;">
+    <div class="container-box" style="display: flex; justify-content:center;">
         <div class="bg-gray-200 min-h-screen pt-0 font-mono my-0">
             <div class="container mx-auto">
                 <div class="inputs w-full max-w-xl p-6">
                     <div class='flex items-center justify-between mt-2'>
                         <div class="personal w-full pt-2">
-                            <h2 class="text-2xl text-gray-900">Personal info:</h2>
+                            <h2 class="text-2xl text-gray-900">TLCP info:</h2>
                             <div class="flex items-center justify-between mt-4">
                                 <div class='w-full md:w-1/2 px-3 mb-6'>
                                     <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>ID
                                     </label>
                                     <input
                                         class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
-                                        type='text' name="id" disabled>
+                                        type='text' name="id">
                                 </div>
                                 <div class='w-full md:w-1/2 px-3 mb-6'>
                                     <label
@@ -180,21 +183,7 @@
                                         type='text' name="bizstype" disabled>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <div class="container-box" style="display: flex;">
-        <div class="bg-gray-200 min-h-screen pt-0 font-mono my-0">
-            <div class="container mx-auto">
-                <div class="inputs w-full y-full max-w-xl p-6 border-l-4 border-gray-400">
-                    <div class='flex items-center justify-between mt-2'>
-                        <div class="personal w-full pt-2">
-                            <h2 class="text-2xl text-gray-900">Personal info:</h2>
-                            <div class="flex items-center justify-between mt-4">
+                            <div class="flex items-center justify-between mt-0">
                                 <div class='w-full md:w-1/2 px-3 mb-6'>
                                     <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Annual License
                                     </label>
@@ -212,65 +201,77 @@
                                         type='text' name="eduemail" disabled>
                                 </div>
                             </div>
-                            <div class='w-full md:w-full px-3 mb-6'>
-                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Kindergarten 
-                                    Name</label>
-                                <input
-                                    class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
-                                    type='text' disabled>
-                            </div>
-                            <div class='w-full md:w-1/2 px-3 mb-6'>
-                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Kindergarten 
-                                    Number</label>
-                                <input
-                                    class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
-                                    type='text' disabled>
-                            </div>
-                            <div class="flex items-center justify-between mt-4">
-                                <div class='w-full md:w-1/5 px-3 mb-6'>
-                                    <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>No.Block/House</label>
+                    </form>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="container-box" style="display: flex;">
+        <div class="bg-gray-200 min-h-screen pt-0 font-mono my-0">
+            <div class="container mx-auto">
+                <div class="inputs w-full y-full max-w-xl p-6 border-l-4 border-gray-400">
+                    <div class='flex items-center justify-between mt-2'>
+                        <div class="personal w-full pt-2">
+                                <div class='w-full md:w-full px-3 mb-6 pt-4'>
+                                    <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Kindergarten 
+                                        Name</label>
                                     <input
                                         class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
                                         type='text' disabled>
                                 </div>
-                                <div class='w-full md:w-full px-3 mb-6 ml-8'>
-                                    <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Street</label>
+                                <div class='w-full md:w-1/2 px-3 mb-6'>
+                                    <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Kindergarten 
+                                        Number</label>
                                     <input
                                         class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
                                         type='text' disabled>
                                 </div>
-                            </div>
-                            <div class='w-full md:w-full px-3 mb-6'>
-                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Owner
-                                    Name</label>
+                                <div class="flex items-center justify-between mt-4">
+                                    <div class='w-full md:w-1/5 px-3 mb-6'>
+                                        <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>No.Block/House</label>
+                                        <input
+                                            class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
+                                            type='text' disabled>
+                                    </div>
+                                    <div class='w-full md:w-full px-3 mb-6 ml-8'>
+                                        <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Street</label>
+                                        <input
+                                            class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
+                                            type='text' disabled>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between mt-4">
+                            <div class='w-full md:w-1/3 px-3 mb-6'>
+                                <label class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Post
+                                    Code</label>
                                 <input
                                     class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
                                     type='text' name="ownername" disabled>
                             </div>
-                            <div class="flex items-center justify-between mt-2">
                                 <div class='w-full md:w-1/2 px-3 mb-6'>
                                     <label
-                                        class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Status
+                                        class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>City
                                     </label>
                                     <input
                                         class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
                                         type='text' name="status" disabled>
                                 </div>
-                                <div class='w-full md:w-2/5 px-3 mb-6'>
+                                <div class='w-full md:w-1/2 px-3 mb-6'>
                                     <label
-                                        class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Year
-                                        Signed
+                                        class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>State
                                     </label>
                                     <input
                                         class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
                                         type='text' name="yearsigned" disabled>
                                 </div>
-                            </div>
+                                </div>
                             <div class="flex items-center justify-between mt-2">
                                 <div class='w-full md:w-1/2 px-3 mb-6'>
                                     <label
-                                        class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Date
-                                        Signed
+                                        class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Type
                                     </label>
                                     <input
                                         class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
@@ -278,22 +279,24 @@
                                 </div>
                                 <div class='w-full md:w-1/2 px-3 mb-6'>
                                     <label
-                                        class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Date
-                                        Operated
-                                    </label>
+                                        class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Operater 
+                                        Number</label>
                                     <input
                                         class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
                                         type='text' name="stateid" disabled>
                                 </div>
-                                <div class='w-full md:w-1/2 px-3 mb-6'>
-                                    <label
-                                        class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>TLCP
-                                        Package
-                                    </label>
-                                    <input
-                                        class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
-                                        type='text' name="bizstype" disabled>
-                                </div>
+                            </div>
+                            <div class='w-full md:w-full px-3 mb-6'>
+                                <label
+                                    class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Operator Address</label>
+                                <textarea
+                                    class='bg-white rounded-md border leading-normal resize-none w-full h-20 py-2 px-3 shadow-inner border border-gray-400 font-medium placeholder-gray-700 focus:outline-none focus:bg-white'
+                                    disabled></textarea>
+                            </div>
+                            <div class="flex justify-end">
+                                <button
+                                    class="appearance-none bg-gray-200 text-gray-900 px-2 py-1 shadow-sm border border-gray-400 rounded-md mr-3"
+                                    type="submit">save changes</button>
                             </div>
                         </div>
                     </div>
@@ -303,5 +306,4 @@
         </div>
 
 </body>
-
 </html>
