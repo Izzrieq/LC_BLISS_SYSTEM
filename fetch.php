@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 include('config/db_conn.php');
 include('function.php');
@@ -52,3 +53,5 @@ $output = array(
 );
 echo json_encode($output);
 ?>
+=======
+>>>>>>> aa57942bf4ab2dbcacdda436c1bbba14f134e6cf

@@ -10,13 +10,26 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 </head>
-
-<body>
-    <header class="d-flex justify-content-between bg-white shadow bg-white">
-        <div class="w-25 p-0 h-75 d-inline-block">
-            <img class="w-100 m-0 h-100 d-inline-block" src="assets/images/LC_COMPANY LOGO_MARCH 2023-01.png"
-                alt="logo">
+<body >
+<div class="container" >
+    <div class="row" style="padding:50px;">
+        <p><h1>DataTable AJAX pagination using PHP and Mysqli</h1></p>
+        <div >
+            <table id='empTable' class='display dataTable' width='100%'>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>DATE/TIME</th>
+                    <th>CUSTOMER NAME</th>
+                    <th>CUSTOMER NO.HP</th>
+                    <th>CATEGORY</th>
+                    <th>TYPE</th>
+                </tr>
+                </thead>
+                 
+            </table>
         </div>
+<<<<<<< HEAD
         <div class="p-0 ">
             <h1 class="mt-3 m-3 h1 text-primary">BLISS CUSTOMER E-LOG</h1>
         </div>
@@ -57,6 +70,12 @@
     </div>
     <script>
         $(document).ready(function () {
+=======
+   </div>
+</div>
+<script>
+        $(document).ready(function(){
+>>>>>>> aa57942bf4ab2dbcacdda436c1bbba14f134e6cf
             var empDataTable = $('#empTable').DataTable({
                 'processing': true,
                 'serverSide': true,
@@ -65,24 +84,13 @@
                     'url': 'ajaxfile.php'
                 },
                 pageLength: 5,
-                'columns': [{
-                        data: 'id'
-                    },
-                    {
-                        data: 'date'
-                    },
-                    {
-                        data: 'cname'
-                    },
-                    {
-                        data: 'cnohp'
-                    },
-                    {
-                        data: 'category'
-                    },
-                    {
-                        data: 'type'
-                    },
+                'columns': [
+                    { data: 'id' },
+                    { data: 'date' },
+                    { data: 'cname' },
+                    { data: 'cnohp' },
+                    { data: 'category' },
+                    { data: 'type' }
                 ]
             });
         });
