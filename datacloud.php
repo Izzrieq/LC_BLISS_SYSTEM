@@ -2,8 +2,8 @@
 <head>
     <title>PHP Mysql PDO CRUD Server Side Ajax DataTables</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js">
 </head>
 <body>
 <div class="container">
@@ -76,6 +76,8 @@
 <script src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" language="javascript" >
+
+// let table = new DataTable('#member_table');
 $(document).ready(function(){
     $('#add_button').click(function(){
         $('#member_form')[0].reset();

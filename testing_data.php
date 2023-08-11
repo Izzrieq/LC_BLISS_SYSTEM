@@ -47,6 +47,7 @@
                             <th>CUSTOMER NO.HP</th>
                             <th>CATEGORY</th>
                             <th>TYPE</th>
+                            <th>TEST</th>
                         </tr>
                     </thead>
 

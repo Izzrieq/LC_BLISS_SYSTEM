@@ -40,7 +40,7 @@ while($row = mysqli_fetch_assoc($empRecords)){
             "cnohp"=>$row['cnohp'],
             "category"=>$row['category'],
             "type"=>$row['type'],
-            
+            echo '<button>test<button>'
         );
     
 }

@@ -23,13 +23,13 @@ if($_POST["length"] != -1)
 {
     $query .= 'LIMIT ' . $_POST['start'] . ', ' . $_POST['length'];
 } 
-$stmt = $conn->prepare($query);
-$stmt->execute();
+$statement = $conn->prepare($query);
+$statement->execute();
 
-$resultSet = $stmt->get_result();
-$result = $resultSet->fetchAll();
+$resultSet = $statement->get_result();
+$result = $statement->fetchAll(MYSQLI_ASSOC);
 $data = array();
-$filtered_rows = $resultSet->rowCount();
+$filtered_rows = $statement->rowCount();
 foreach($result as $row)
 {
     $sub_array = array();
