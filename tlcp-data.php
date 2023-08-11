@@ -25,52 +25,63 @@ $result = mysqli_query($conn, "SELECT * FROM datalc ORDER BY id DESC");
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 
  </head>
  <body>
- <header class="d-flex justify-content-between bg-white">
-        <div class="w-25 p-0 h-75 d-inline-block">
-            <img  class="w-100 m-0 h-100 d-inline-block" src="assets/images/LC_COMPANY LOGO_MARCH 2023-01.png" alt="logo">
-        </div>
-        <div class="p-0 ">
+    <div class="p-0 ">
             <h1 class="mt-3 m-3 h1 text-primary">BLISS CUSTOMER E-LOG</h1>
-        </div>
-    </header>
- <center class="underline font-bold text-xl pt-6">SENARAI PELAJAR </center>
+    </div>
+        <ul class="nav bg-white px-5">
+    <li class="nav-item">
+        <a class="nav-link active" href="home.php">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="home.php">Return</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+    </li>
+        </ul>
+
+ <center class="font-bold text-2xl mt-6">LIST TLCP</center>
+        <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-8 border border-green-700 rounded ml-20">
+            <a href='tlcp-add.php'>ADD TLCP</a>
+        </button>     
  <div class="overflow-hidden">
-     <div class="flex flex-col pt-6 pr-12 pl-12">
+     <div class="flex flex-col pt-6 pr-4 pl-4">
      <div class="overflow-x-auto sm:-mx-8 lg:-mx-8">
          <div class="py-2 inline-block min-w-full sm:px-8 lg:px-8">
-         
-             <table class="min-w-full border text-center">
+             <table class="min-w-full border text-center bg-white">
              <thead>
                  <tr class="border-b bg-gray-700">
-                 <th scope="col" class="text-md font-medium text-white px-4 py-4 border-r">
+                 <th scope="col" class="text-md font-medium text-white px-2 py-2 border-r">
                      ID
                  </th>
-                 <th scope="col" class="text-md font-medium text-white px-4 py-4 border-r">
-                     STATE ID
+                 <th scope="col" class="text-md font-medium text-white px-2 py-2 border-r">
+                     STATE_ID
                  </th>
-                 <th scope="col" class="text-md font-medium text-white px-4 py-4 border-r">
-                     BIZ TYPE
+                 <th scope="col" class="text-md font-medium text-white px-4 py-2 border-r">
+                     BIZ_TYPE
                  </th>
-                 <th scope="col" class="text-md font-medium text-white px-4 py-4 border-r">
-                     LITTLE CALIPH ID 
+                 <th scope="col" class="text-md font-medium text-white px-8 py-2 border-r">
+                     LITTLECALIPH_ID 
                  </th>
-                 <th scope="col" class="text-md font-medium text-white px-4 py-4 border-r">
-                     OPERATOR NAME
+                 <th scope="col" class="text-md font-medium text-white px-4 py-2 border-r">
+                     OPERATOR_NAME
                  </th>
-                 <th scope="col" class="text-md font-medium text-white px-4 py-4 border-r">
-                     OWNER NAME
+                 <th scope="col" class="text-md font-medium text-white px-4 py-2 border-r">
+                     OWNER_NAME
                  </th>
-                 <th scope="col" class="text-md font-medium text-white px-4 py-4 border-r">
-                     EDU EMAIL
+                 <th scope="col" class="text-md font-medium text-white px-4 py-2 border-r">
+                     EDU_EMAIL
                  </th>
-                 <th scope="col" class="text-md font-medium text-white px-4 py-4 border-r">
+                 <th scope="col" class="text-md font-medium text-white px-4 py-2 border-r">
                      KINDERGARTEN NUMBER
                  </th>
-                 <th scope="col" class="text-md font-medium text-white px-4 py-4 border-r">
-                     
+                 <th scope="col" class="text-md font-medium text-white px-4 py-2 border-r">
+                     ACTION
                  </th>
                  </tr>
                 <?php
@@ -79,34 +90,38 @@ $result = mysqli_query($conn, "SELECT * FROM datalc ORDER BY id DESC");
                 while ($r = mysqli_fetch_array($result)){
                 ?>  
                 <tr>
-                    <td class="border-r"><?php echo $r['id']; ?></td>
-                    <td class="border-r"><?php echo $r['stateid']; ?></td>
-                    <td class="border-r"><?php echo $r['bizstype']; ?></td>
-                    <td class="border-r"><?php echo $r['lcid']; ?></td>
-                    <td class="border-r"><?php echo $r['operatorname']; ?></td>
-                    <td class="border-r"><?php echo $r['ownername']; ?></td>
-                    <td class="border-r"><?php echo $r['eduemail']; ?></td>
-                    <td class="border-r"><?php echo $r['kindernohp']; ?></td>
-                    <td>
-                        <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-3 border border-gray-700 rounded">
-                            <a href='tlcp-info.php?id=<?php echo $r['id'];?>'>INFO</a>
-                        </button>
-                        <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-3 border border-gray-700 rounded">
-                            <a href='update.php?id=<?php echo $r['id'];?>'>UPDATE</a>
-                        </button>
-                        <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-3 border border-red-700 rounded">
-                            <a href='delete.php?id=<?php echo $r['id'];?>'>Delete</a>
-                        </button>
+                    <td class="border-r border-b"><?php echo $r['id']; ?></td>
+                    <td class="border-r border-b"><?php echo $r['stateid']; ?></td>
+                    <td class="border-r border-b"><?php echo $r['bizstype']; ?></td>
+                    <td class="border-r border-b px-2"><?php echo $r['lcid']; ?></td>
+                    <td class="border-r border-b px-8"><?php echo $r['operatorname']; ?></td>
+                    <td class="border-r border-b px-8"><?php echo $r['ownername']; ?></td>
+                    <td class="border-r border-b px-2"><?php echo $r['eduemail']; ?></td>
+                    <td class="border-r border-b px-0"><?php echo $r['kindernohp']; ?></td>
+                    <td class="border-r border-b p-2">
+                        <div class="flex items-center justify-between mt-2">
+                            <button class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-1 px-2 border border-gray-700 rounded">
+                                <a href='tlcp-info.php?id=<?php echo $r['id'];?>'>INFO</a>
+                            </button>
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-gray-700 rounded">
+                                <a href='tlcp-update.php?id=<?php echo $r['id'];?>'>UPDATE</a>
+                            </button>
+                            <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-700 rounded">
+                                <a href='delete.php?id=<?php echo $r['id'];?>'>DELETE</a>
+                            </button>
+                        </div>
                     </td>
+                    
                 </tr>
                 <?php $bil = $bil + 1; 
                 }
                 ?>
              </thead>
-             </table>       
+             </table>   
          </div>
      </div>
      </div>
- </div> 
+    </div>
+        
 </body>
  </html>

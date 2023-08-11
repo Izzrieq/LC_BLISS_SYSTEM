@@ -136,7 +136,7 @@ $data = mysqli_query($conn, "SELECT * FROM lcdetails WHERE id='$id'");
                                 </div>
                             </div>
                             <div class="flex items-center justify-between mt-0">
-                                <div class='w-full md:w-1/2 px-3 mb-6'>
+                                <div class='w-full md:w-2/5 px-3 mb-6'>
                                     <label
                                         class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Annual
                                         License
@@ -145,7 +145,7 @@ $data = mysqli_query($conn, "SELECT * FROM lcdetails WHERE id='$id'");
                                         class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
                                         type='text' name="annuallicense" value=<?php echo $r["annuallicense"]; ?> disabled>
                                 </div>
-                                <div class='w-full md:w-1/2 px-3 mb-6'>
+                                <div class='w-full md:w-full px-3 mb-6'>
                                     <label
                                         class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Edu
                                         Email
@@ -175,8 +175,8 @@ $data = mysqli_query($conn, "SELECT * FROM lcdetails WHERE id='$id'");
             <div class="bg-gray-200 min-h-screen pt-0 font-mono my-0">
                 <div class="container mx-auto">
                     <div class="inputs w-full y-full max-w-xl p-6 border-l-4 border-gray-400">
-                        <div class='flex items-center justify-between mt-2'>
-                            <div class="personal w-full md:w-1/2 pt-2">
+                        <!-- <div class='flex items-center justify-between mt-2'> -->
+                            <div class="personal w-full md:w-full pt-2">
                                 <div class='w-full md:w-full px-3 mb-6 pt-4'>
                                     <label
                                         class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Kindergarten
@@ -185,12 +185,12 @@ $data = mysqli_query($conn, "SELECT * FROM lcdetails WHERE id='$id'");
                                         class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
                                         type='kindername' name="kindername" value=<?php echo $r["kindername"]; ?> disabled>
                                 </div>
-                                <div class='w-full md:w-1/2 px-3 mb-6'>
+                                <div class='w-auto md:w-1/2 px-3 mb-6'>
                                     <label
                                         class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Kindergarten
                                         Number</label>
                                     <input
-                                        class='appearance-none block w-full bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
+                                        class='appearance-none block w-auto bg-white text-gray-700 border border-gray-400 shadow-inner rounded-md py-3 px-4 leading-tight focus:outline-none  focus:border-gray-500'
                                         type='kindernohp' name="kindernohp" value=<?php echo $r["kindernohp"]; ?> disabled>
                                 </div>
                                 <div class="flex items-center justify-between mt-4">
@@ -253,7 +253,7 @@ $data = mysqli_query($conn, "SELECT * FROM lcdetails WHERE id='$id'");
                                             type='text' name="operatornohp" value=<?php echo $r["operatornohp"]; ?> disabled>
                                     </div>
                                 </div>
-                                <div class='w-full md:w-full px-3 mb-6'>
+                                <div class='w-auto md:w-full px-3 mb-6'>
                                     <label
                                         class='block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'>Operator
                                         Address</label>
@@ -267,7 +267,7 @@ $data = mysqli_query($conn, "SELECT * FROM lcdetails WHERE id='$id'");
                                         type="submit">save changes</button>
                                 </div>
                             </div>
-                        </div>
+                        
                         </form>
                     </div>
                 </div>

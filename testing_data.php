@@ -22,6 +22,26 @@
 </head>
 <body >
 <div class="container" >
+<<<<<<< HEAD
+=======
+    <div class="row" style="padding:50px;">
+        <p><h1>DataTable AJAX pagination using PHP and Mysqli</h1></p>
+        <div >
+            <table id='empTable' class='display dataTable' width='100%'>
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>DATE/TIME</th>
+                    <th>CUSTOMER NAME</th>
+                    <th>CUSTOMER NO.HP</th>
+                    <th>CATEGORY</th>
+                    <th>TYPE</th>
+                </tr>
+                </thead>
+                 
+            </table>
+        </div>
+>>>>>>> 973d2c8fe686ab3dcf0c8db07741c3d6b560945b
         <div class="p-0 ">
             <h1 class="mt-3 m-3 h1 text-primary">BLISS CUSTOMER E-LOG</h1>
         </div>
@@ -68,10 +88,15 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
    </div>
 </div>
 <script>
          $(document).ready(function(){
+=======
+    <script>
+        $(document).ready(function () {
+>>>>>>> 973d2c8fe686ab3dcf0c8db07741c3d6b560945b
             var empDataTable = $('#empTable').DataTable({
                 'processing': true,
                 'serverSide': true,
