@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 include('config/db_conn.php');
 include('function.php');
@@ -28,7 +27,7 @@ $statement = $conn->prepare($query);
 $statement->execute();
 
 $resultSet = $statement->get_result();
-$result = $statement->fetchAll(MYSQLI_ASSOC);
+$result = $statement->fetch_all(MYSQLI_ASSOC);
 $data = array();
 $filtered_rows = $statement->rowCount();
 foreach($result as $row)
@@ -53,5 +52,3 @@ $output = array(
 );
 echo json_encode($output);
 ?>
-=======
->>>>>>> aa57942bf4ab2dbcacdda436c1bbba14f134e6cf

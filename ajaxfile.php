@@ -27,24 +27,21 @@ $totalRecordwithFilter = $records['allcount'];
 ## Fetch records
 $empQuery = "select * from complaintbliss WHERE 1 ".$searchQuery." order by ".$columnName." ".$columnSortOrder." limit ".$row.",".$rowperpage;
 $empRecords = mysqli_query($conn, $empQuery);
- 
 $data = array();
- 
-while($row = mysqli_fetch_assoc($empRecords)){
+
+while ($row = mysqli_fetch_assoc($empRecords)) {
     $id = $row['id'];
     $idarray = "$id";
     $data[] = array(
-            "id"=>$idarray,
-            "date"=>$row['date'],
-            "cname"=>$row['cname'],
-            "cnohp"=>$row['cnohp'],
-            "category"=>$row['category'],
-            "type"=>$row['type'],
-            echo '<button>test<button>'
-        );
-    
+        "id" => $id, // Include the id field
+        "date" => $row['date'],
+        "cname" => $row['cname'],
+        "cnohp" => $row['cnohp'],
+        "category" => $row['category'],
+        "type" => $row['type']
+    );
 }
- 
+
 ## Response
 $response = array(
     "draw" => intval($draw),
@@ -52,7 +49,6 @@ $response = array(
     "iTotalDisplayRecords" => $totalRecordwithFilter,
     "aaData" => $data
 );
- 
+
 echo json_encode($response);
- 
 ?>
