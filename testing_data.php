@@ -29,7 +29,6 @@
                  
             </table>
         </div>
-<<<<<<< HEAD
         <div class="p-0 ">
             <h1 class="mt-3 m-3 h1 text-primary">BLISS CUSTOMER E-LOG</h1>
         </div>
@@ -70,12 +69,6 @@
     </div>
     <script>
         $(document).ready(function () {
-=======
-   </div>
-</div>
-<script>
-        $(document).ready(function(){
->>>>>>> aa57942bf4ab2dbcacdda436c1bbba14f134e6cf
             var empDataTable = $('#empTable').DataTable({
                 'processing': true,
                 'serverSide': true,
