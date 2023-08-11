@@ -104,7 +104,7 @@ $result = mysqli_query($conn, "SELECT * FROM datalc ORDER BY id DESC");
                                 <a href='tlcp-info.php?id=<?php echo $r['id'];?>'>INFO</a>
                             </button>
                             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-gray-700 rounded">
-                                <a href='update.php?id=<?php echo $r['id'];?>'>UPDATE</a>
+                                <a href='tlcp-update.php?id=<?php echo $r['id'];?>'>UPDATE</a>
                             </button>
                             <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-700 rounded">
                                 <a href='delete.php?id=<?php echo $r['id'];?>'>DELETE</a>
